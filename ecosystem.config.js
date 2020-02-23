@@ -1,7 +1,7 @@
    module.exports = {
      apps: [
        {
-         name: 'sails',
+         name: 'sapper',
          cwd: '/usr/src/app/sapperApp/',
          script: 'npm run build && npm run start',
          instances: 1,
