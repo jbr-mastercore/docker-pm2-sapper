@@ -9,8 +9,7 @@ RUN apt-get update && \
     curl -fsSL "https://raw.githubusercontent.com/aam-git/docker-pm2-sapper/master/ecosystem.config.js" -o ecosystem.config.js && \
     npx degit "sveltejs/sapper-template#rollup" sapperApp && \
     cd sapperApp && \
-    npm install && \
-    sed -i '/"start": "node __sapper__\/build",/a     "docker-start": "sapper build --legacy && node __sapper__\/build",' package.json
+    npm install
 
 EXPOSE 3000
 
