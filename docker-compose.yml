@@ -1,0 +1,14 @@
+version: '2'
+services:
+  sapper:
+    image: aamservices/pm2-sapper:latest
+    restart: unless-stopped
+    volumes:
+      - sapper_data:/usr/src/app
+    networks:
+      - internal
+    ports:
+      - 3000
+volumes:
+  sapper_data:
+    driver: local
