@@ -5,17 +5,11 @@ powered by pm2:latest-slim image
 [Sapper][1] The next small thing in web development.
 
 
-Instructions for Composer
-========
 
-```
-1) $ docker-compose up -d
+Available tags you can use: latest (default) or dev
 
-2) go to your web url (eg. http://127.0.0.1:3000)
-```
+Tag dev runs in live reload mode so you can make changes to the file and they update on the website without need to restart
 
-
-Available tags you can use in docker compose (default master): master, minimal or caviar
 
 ## docker-compose.yml
 
