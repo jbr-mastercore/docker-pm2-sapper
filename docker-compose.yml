@@ -1,7 +1,7 @@
 version: '2'
 services:
   sapper:
-    image: aamservices/pm2-sapper:latest
+    image: aamservices/pm2-sapper:dev
     restart: unless-stopped
     volumes:
       - sapper_data:/usr/src/app
