@@ -3,10 +3,13 @@ LABEL maintainer="AAMServices <info@aamservices.uk>"
 
 WORKDIR /usr/src/app
 
-RUN curl -fsSL "https://raw.githubusercontent.com/aam-git/docker-pm2-sapper/master/ecosystem.config.js" -o ecosystem.config.js && \
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends git && \
+    rm -rf /var/lib/apt/lists/* && \
+    curl -fsSL "https://raw.githubusercontent.com/aam-git/docker-pm2-sapper/master/ecosystem.config.js" -o ecosystem.config.js && \
     npx degit "sveltejs/sapper-template#rollup" sapperApp && \
     cd sapperApp && \
-	npm install
+    npm install
 
 EXPOSE 3000
 
