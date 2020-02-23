@@ -10,7 +10,7 @@ RUN apt-get update && \
     npx degit "sveltejs/sapper-template#rollup" sapperApp && \
     cd sapperApp && \
     npm install && \
-    npm run build
+    sed -i '/"start": "node __sapper__\/build",/a     "docker-start": "sapper build --legacy && node __sapper__\/build",' package.json
 
 EXPOSE 3000
 

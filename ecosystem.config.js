@@ -4,7 +4,7 @@
          name: 'sails',
          cwd: '/usr/src/app/sapperApp/',
          script: 'npm',
-		 args: 'run start',
+		 args: 'run docker-start',
          instances: 1,
          autorestart: true,
          watch: false,
