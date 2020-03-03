@@ -3,7 +3,7 @@
        {
          name: 'sapper',
          cwd: '/usr/src/app/sapperApp/',
-         script: 'npm run build && npm run start',
+         script: 'NODE_ENV=production && npm run build && npm run start',
          instances: 1,
          autorestart: true,
          watch: false,
