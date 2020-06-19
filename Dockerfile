@@ -1,13 +1,15 @@
-FROM keymetrics/pm2:latest-slim
-LABEL maintainer="AAMServices <info@aamservices.uk>"
+FROM keymetrics/pm2:latest-stretch
+LABEL maintainer="Jose Bracho <brachojgbp@gmail.com>"
 
 WORKDIR /usr/src/app
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends git && \
-    rm -rf /var/lib/apt/lists/* && \
-    curl -fsSL "https://raw.githubusercontent.com/aam-git/docker-pm2-sapper/master/ecosystem.config.js" -o ecosystem.config.js && \
-    npx degit "sveltejs/sapper-template#rollup" sapperApp && \
+    rm -rf /var/lib/apt/lists/*
+
+COPY ecosystem.config.js /
+
+RUN npx degit "sveltejs/sapper-template#rollup" sapperApp && \
     cd sapperApp && \
     npm install
 
