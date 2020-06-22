@@ -1,7 +1,6 @@
-Docker PM2 Sapper v0.27.9
+Docker PM2 Sapper v0.1.0
 ========
-powered by pm2:latest-slim image
-
+powered by keymetrics/pm2:latest-stretch
 [Sapper][1] The next small thing in web development.
 
 
