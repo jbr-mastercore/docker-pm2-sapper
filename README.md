@@ -18,13 +18,11 @@ services:
     restart: always
     volumes:
       - ./app/:/usr/src/app/sapperApp/
+      - ./pm2-sapper/:/usr/src/app/
     ports:
       - 80:3000
 ```
 
-use
+use 
 
 docker exec -it container pm2 (logs, monit, restart id, stop, any more)
-
-
-[1]: https://sapper.svelte.dev
