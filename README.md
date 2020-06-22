@@ -6,10 +6,7 @@ powered by pm2:latest-slim image
 
 
 
-Available tags you can use: latest (default) or dev
-
-Tag dev runs in live reload mode so you can make changes to the file and they update on the website without need to restart
-
+Available tags you can use: 1.0
 
 ## docker-compose.yml
 
@@ -17,18 +14,17 @@ Tag dev runs in live reload mode so you can make changes to the file and they up
 version: '2'
 services:
   sapper:
-    image: aamservices/pm2-sapper:latest
-    restart: unless-stopped
+    image: jbracho/pm2-sapper:1.0
+    restart: always
     volumes:
-      - sapper_data:/usr/src/app
-    networks:
-      - internal
+      - ./app/:/usr/src/app/sapperApp/
     ports:
-      - 3000
-volumes:
-  sapper_data:
-    driver: local
+      - 80:3000
 ```
+
+use
+
+docker exec -it container pm2 (logs, monit, restart id, stop, any more)
 
 
 [1]: https://sapper.svelte.dev

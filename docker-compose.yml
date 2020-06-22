@@ -1,14 +1,12 @@
 version: '2'
 services:
   sapper:
-    image: jbracho/pm2-sapper:latest
-    restart: unless-stopped
+    image: jbracho/pm2-sapper:1.0
+    container_name: sapper-app
+    restart: always
     volumes:
-      - sapper_data:/usr/src/app
-    networks:
-      - internal
+      - ~/app/:/usr/src/app/sapperApp/
+      - ./pm2-sapper/:/usr/src/app/
     ports:
-      - 3000
-volumes:
-  sapper_data:
-    driver: local
+      - 80:3000
+
